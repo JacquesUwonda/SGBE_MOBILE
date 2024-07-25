@@ -12,11 +12,6 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const SplashView(),
     ),
     GoRoute(
-      name: RouteNames.description,
-      path: "/description",
-      builder: (context, state) => const LoginView(),
-    ),
-    GoRoute(
       name: RouteNames.login,
       path: "/login",
       builder: (context, state) => const LoginView(),

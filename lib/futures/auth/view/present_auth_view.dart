@@ -14,14 +14,6 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView> {
   @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.goNamed(RouteNames.login);
-    });
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.backGroundColor,
@@ -45,9 +37,10 @@ class _SplashViewState extends State<SplashView> {
           Positioned(
               bottom: 20,
               child: RoundedElevatedButton(
-                buttonText: AppString.getStarted,
-                onPressed: () => context.pushNamed(RouteNames.login),
-              ))
+                  buttonText: AppString.getStarted,
+                  onPressed: () {
+                    context.pushNamed(RouteNames.login);
+                  }))
         ],
       ),
     );
