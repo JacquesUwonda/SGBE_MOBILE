@@ -122,7 +122,7 @@ class _RegisterViewState extends State<RegisterView> {
                               isPasswordVisible
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: AppColor.greyColor,
+                              color: AppColor.secondColor,
                             ),
                           ),
                           hintText: AppString.password,

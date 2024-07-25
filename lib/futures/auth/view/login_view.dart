@@ -103,7 +103,7 @@ class _LoginViewState extends State<LoginView> {
                               isPasswordVisible
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: AppColor.greyColor,
+                              color: AppColor.secondColor,
                             ),
                           ),
                           hintText: AppString.password,

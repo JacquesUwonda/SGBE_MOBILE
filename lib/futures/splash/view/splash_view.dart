@@ -13,7 +13,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.goNamed(RouteNames.login);
+      context.goNamed(RouteNames.description);
     });
     super.initState();
   }

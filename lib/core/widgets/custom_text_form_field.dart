@@ -20,8 +20,11 @@ class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final Widget? suffix;
   final Widget? prefix;
-  final EdgeInsetsGeometry? contentPadding =
-      const EdgeInsetsDirectional.symmetric(vertical: 2);
+  final EdgeInsetsGeometry? contentPadding = const EdgeInsetsDirectional.only(
+    top: 2,
+    bottom: 2,
+    end: 10,
+  );
 
   @override
   Widget build(BuildContext context) {
