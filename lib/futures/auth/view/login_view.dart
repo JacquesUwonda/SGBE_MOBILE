@@ -92,7 +92,7 @@ class _LoginViewState extends State<LoginView> {
                           },
                           keyboardType: TextInputType.visiblePassword,
                           obscureText: !isPasswordVisible,
-                          prefix: const Icon(Icons.lock_outlined),
+                          prefix: const Icon(Icons.lock_outline),
                           suffix: InkWell(
                             onTap: () {
                               setState(() {

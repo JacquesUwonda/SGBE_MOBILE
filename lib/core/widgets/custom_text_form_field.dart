@@ -8,8 +8,8 @@ class CustomTextFormField extends StatelessWidget {
     required this.validator,
     required this.keyboardType,
     required this.obscureText,
-    required this.prefix,
     required this.suffix,
+    required this.prefix,
     required this.hintText,
   });
 
@@ -18,8 +18,10 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscureText;
   final String hintText;
-  final Widget? prefix; //still working on it
   final Widget? suffix;
+  final Widget? prefix;
+  final EdgeInsetsGeometry? contentPadding =
+      const EdgeInsetsDirectional.symmetric(vertical: 2);
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +33,10 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       decoration: InputDecoration(
         suffix: suffix,
+        prefixIcon: prefix,
         hintText: hintText,
-        hintStyle: const TextStyle(fontWeight: FontWeight.w400),
+        contentPadding: contentPadding,
+        hintStyle: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
         border: OutlineInputBorder(
           borderSide: const BorderSide(color: AppColor.borderColor, width: 1),
           borderRadius: BorderRadius.circular(10),
