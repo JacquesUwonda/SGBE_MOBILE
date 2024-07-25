@@ -15,7 +15,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final _LoginFormKey = GlobalKey<FormState>();
+  final _loginFormKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isPasswordVisible = false;
@@ -35,7 +35,7 @@ class _LoginViewState extends State<LoginView> {
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
             child: Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 15,
@@ -51,12 +51,15 @@ class _LoginViewState extends State<LoginView> {
                 children: [
                   const Text(
                     AppString.authentificationText,
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Form(
-                    key: _LoginFormKey,
+                    key: _loginFormKey,
                     child: Column(
                       children: [
                         CustomTextFormField(
@@ -111,7 +114,7 @@ class _LoginViewState extends State<LoginView> {
                         RoundedElevatedButton(
                           buttonText: AppString.login,
                           onPressed: () {
-                            if (_LoginFormKey.currentState!.validate()) {}
+                            if (_loginFormKey.currentState!.validate()) {}
                           },
                         ),
                         const SizedBox(

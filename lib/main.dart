@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData(
+        fontFamily: 'Mitr',
+      ),
       debugShowCheckedModeBanner: false,
       title: AppString.appName,
       // theme: AppTheme.darkThemeMode,

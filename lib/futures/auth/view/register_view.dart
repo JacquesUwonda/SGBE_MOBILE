@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sgbe/core/routes/route_names.dart';
 import 'package:sgbe/core/theme/app_color.dart';
 import 'package:sgbe/core/utils_constants/app_string.dart';
 import 'package:sgbe/core/utils_constants/validationsRules.dart';
@@ -14,16 +16,14 @@ class RegisterView extends StatefulWidget {
 
 class _RegisterViewState extends State<RegisterView> {
   final _registerFormKey = GlobalKey<FormState>();
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isPasswordVisible = false;
 
   @override
   void dispose() {
-    _firstNameController.dispose();
-    _lastNameController.dispose();
+    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
@@ -53,16 +53,19 @@ class _RegisterViewState extends State<RegisterView> {
                 children: [
                   const Text(
                     AppString.inscriptionText,
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Form(
                     key: _registerFormKey,
                     child: Column(
                       children: [
                         CustomTextFormField(
-                          controller: _firstNameController,
+                          controller: _nameController,
                           validator: (val) {
                             if (val!.isEmpty) {
                               return AppString.required;
@@ -73,24 +76,7 @@ class _RegisterViewState extends State<RegisterView> {
                           obscureText: false,
                           prefix: const Icon(Icons.person_2_outlined),
                           suffix: null,
-                          hintText: AppString.firstname,
-                        ),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        CustomTextFormField(
-                          controller: _lastNameController,
-                          validator: (val) {
-                            if (val!.isEmpty) {
-                              return AppString.required;
-                            }
-                            return null;
-                          },
-                          keyboardType: TextInputType.name,
-                          obscureText: false,
-                          prefix: const Icon(Icons.person_2_outlined),
-                          suffix: null,
-                          hintText: AppString.lastname,
+                          hintText: AppString.nom,
                         ),
                         const SizedBox(
                           height: 16,
@@ -150,6 +136,29 @@ class _RegisterViewState extends State<RegisterView> {
                             if (_registerFormKey.currentState!.validate()) {}
                           },
                         ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            context.pushNamed(RouteNames.login);
+                          },
+                          child: RichText(
+                            text: const TextSpan(
+                              text: AppString.oldUser,
+                              style: TextStyle(color: AppColor.greyColor),
+                              children: [
+                                TextSpan(
+                                  text: AppString.login,
+                                  style: TextStyle(
+                                    color: AppColor.secondColor,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),

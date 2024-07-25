@@ -3,8 +3,7 @@ class AppString {
   static const appName = "SGBE MOBILE";
 
   //Login & Register string
-  static const firstname = "Nom";
-  static const lastname = "Prenom";
+  static const nom = "Nom complet";
   static const email = "Email";
   static const password = "Mot de passe";
   static const required = "veillez remplir ce champ";
@@ -14,6 +13,7 @@ class AppString {
   static const authentificationText = "Authentification";
   static const inscriptionText = "Inscription";
   static const newUser = "Nouveau utilisateur? ";
+  static const oldUser = "J'ai deja un compte. ";
 
   //errors string
   static const provideValidEmail = "Email invalide";
