@@ -3,11 +3,7 @@ class AppString {
   static const appName = "SGBE MOBILE";
   static const sgbe = "SGBE";
   static const appDescription =
-      """Le Système de Gestion des Devoirs des Étudiants (SGDE) 
-est une plateforme conçue pour rationaliser le processus de soumission et de
-notation des devoirs. 
-Il facilite la communication efficace entre les étudiants et les enseignants,
-permettant une gestion fluide des devoirs de cours""";
+      "Le Système de Gestion des Devoirs des Étudiants (SGDE) est une plateforme conçue pour rationaliser le processus de soumission et de notation des devoirs. Il facilite la communication efficace entre les étudiants et les enseignants, permettant une gestion fluide des devoirs de cours";
 
   //Login & Register string
   static const nom = "Nom complet";

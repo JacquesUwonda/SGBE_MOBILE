@@ -12,8 +12,8 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.goNamed(RouteNames.login);
+    Future.delayed(const Duration(seconds: 4), () {
+      context.goNamed(RouteNames.onboarding);
     });
     super.initState();
   }
